@@ -1,5 +1,7 @@
 # Bazel Test Filter Support: rules_swift
 
+> This support was added in https://github.com/bazelbuild/rules_swift/pull/999
+
 This repository demonstrates the addition of [`--test_filter`](https://bazel.build/docs/user-manual#test-filter) support in the [bazelbuild/rules_swift](https://github.com/bazelbuild/rules_swift) [`xctest_runner.sh.template`](https://github.com/bazelbuild/rules_swift/blob/a4f17129f052062bc3084d56b9f25c8b51b855f9/tools/xctest_runner/xctest_runner.sh.template#L57). [Per the Bazel Test Encyclopedia](https://bazel.build/reference/test-encyclopedia), the value of `--test_filter` is injected into test runners as the `TESTBRIDGE_TEST_ONLY` environment variable.
 
 This allows [`swift_test`](https://github.com/bazelbuild/rules_swift/blob/master/doc/rules.md#swift_test) consumers to specify a test scope when invoking tests for a given target, allowing the test execution to be more focused (similar to Xcode test selection conveniences). The following code block demonstrates the use of this parameter:
